@@ -1,6 +1,7 @@
 package com.List;
 
-import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WHList {
 
@@ -46,14 +47,20 @@ public class WHList {
     }
 
     // 输出链表的数据
-    public Array getListArray(){
+    public List<String> getListArray(){
         // 初始化一个返回结果的数组
-        String[] ResultArray;
+        List<String> ResultArray = new ArrayList<String>();
         if (headNode == null) {
             return null;
         }else
         {
-            return null;
+            ListNode pnode = headNode;
+            while (pnode.Next !=null)
+            {
+               ResultArray.add(pnode.data);
+               pnode = pnode.Next;
+            }
+            return ResultArray;
         }
 
     }
