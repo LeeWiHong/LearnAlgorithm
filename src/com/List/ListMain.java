@@ -8,5 +8,6 @@ public class ListMain {
         list.insertList("李白");
         System.out.print("helloworld2");
         System.out.print("helloworld3");
+        System.out.print("helloworld4");
     }
 }
