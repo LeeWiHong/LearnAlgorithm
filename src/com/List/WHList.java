@@ -1,5 +1,6 @@
 package com.List;
 
+import javax.xml.transform.Result;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +47,42 @@ public class WHList {
         }
     }
 
+//    删除链表指定位置的节点数据
+    public boolean deleteListNode(String InputNode){
+        if (headNode == null){
+            return false;
+        }
+        else {
+            ListNode pnode = headNode;
+            ListNode hnode = pnode;
+            while (pnode.Next != null){
+                if (pnode.data.equals(InputNode)){
+                    if (pnode == headNode)
+                    {
+                        headNode = pnode.Next;
+                        pnode.Next = null;
+                        return true;
+                    }else if (pnode.Next != null){
+                        pnode = pnode.Next;
+                        return true;
+                    }
+                    else {
+                        pnode.Next = null;
+                        return true;
+                    }
+                }else {
+                    pnode = pnode.Next;
+                }
+            }
+            if (pnode.data.equals(InputNode)){
+                pnode.Next = null;
+                return true;
+            }else {
+                return false;
+            }
+        }
+    }
+
     // 输出链表的数据
     public List<String> getListArray(){
         // 初始化一个返回结果的数组
@@ -55,14 +92,32 @@ public class WHList {
         }else
         {
             ListNode pnode = headNode;
+//            循环链表一直到最后一个节点
             while (pnode.Next !=null)
             {
                ResultArray.add(pnode.data);
                pnode = pnode.Next;
             }
+//            最后一个节点输入到数组中去
+            ResultArray.add(pnode.data);
             return ResultArray;
         }
+    }
 
+//    输出得到链表的长度
+    public int getListLength(){
+        int length = 0;
+        if (headNode == null){
+            return length;
+        }else {
+            ListNode pnode = headNode;
+            while (pnode.Next !=null){
+                length ++;
+                pnode = pnode.Next;
+            }
+            length++;
+            return length;
+        }
     }
 
 }
