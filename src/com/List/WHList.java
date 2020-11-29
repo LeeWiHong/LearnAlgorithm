@@ -21,7 +21,7 @@ public class WHList {
         }
     }
 
-    // 1.链表插入数据
+    // 1.1链表尾部插入数据
     public void insertList(String data){
         ListNode listNode = new ListNode(data);
         //  头节点为空,也可以说是整个链表都是空的
@@ -46,7 +46,22 @@ public class WHList {
         }
     }
 
-//    2.删除链表指定位置的节点数据
+//    1.2在链表的指定位置插入数据规定0为头节点插入-1为尾节点插入
+    public void insertList(int index,String data){
+        ListNode tempnode = new ListNode(data);
+        ListNode pnode = headNode;
+//        如果插入的是头节点
+        if (index == 0){
+            headNode = tempnode;
+            headNode.Next = pnode;
+        }else if (index == -1){
+            while (pnode.Next != null){
+                pnode = pnode.Next;
+            }
+        }
+    }
+
+//    2.1删除链表指定位置的节点数据
     public boolean deleteListNode(String InputNode){
         if (headNode == null){
             return false;

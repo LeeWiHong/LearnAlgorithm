@@ -5,12 +5,14 @@ public class ListMain {
         WHList list = new WHList();
         list.insertList("赵云");
         list.insertList("李白");
+        list.insertList(0,"zhaoyun");
 //        list.insertList("李黑");
 //        list.insertList("李黄");
 //        list.insertList("李逵");
         System.out.print(list.getListArray()+"\n");
+
 //        System.out.print("前置节点是---"+list.PriorNode("李白"));
-        System.out.print("后置节点是---"+list.NextNode("李白"));
+        System.out.print("后置节点是---"+list.NextNode("赵云"));
 
 
 
