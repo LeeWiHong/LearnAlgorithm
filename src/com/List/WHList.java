@@ -161,9 +161,26 @@ public class WHList {
                 }
             }
         if (pnode.data.equals(InputNode)){
-            return hnode.data;
+            if (pnode == headNode){
+                return null;
+            }else {
+                return hnode.data;
+            }
         }else {
             return null;
         }
+    }
+
+//    7.返回节点的后置节点值
+    public String NextNode(String InputNode){
+        ListNode pnode = headNode;
+        while (pnode.Next != null){
+            if (pnode.data.equals(InputNode)){
+                return pnode.Next.data;
+            }else {
+                pnode = pnode.Next;
+            }
+        }
+        return null;
     }
 }
