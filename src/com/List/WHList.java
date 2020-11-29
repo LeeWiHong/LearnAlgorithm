@@ -1,6 +1,5 @@
 package com.List;
 
-import javax.xml.transform.Result;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +21,7 @@ public class WHList {
         }
     }
 
-    // 链表插入数据
+    // 1.链表插入数据
     public void insertList(String data){
         ListNode listNode = new ListNode(data);
         //  头节点为空,也可以说是整个链表都是空的
@@ -47,7 +46,7 @@ public class WHList {
         }
     }
 
-//    删除链表指定位置的节点数据
+//    2.删除链表指定位置的节点数据
     public boolean deleteListNode(String InputNode){
         if (headNode == null){
             return false;
@@ -90,7 +89,7 @@ public class WHList {
         }
     }
 
-    // 输出链表的数据
+    // 3.输出链表的数据
     public List<String> getListArray(){
         // 初始化一个返回结果的数组
         List<String> ResultArray = new ArrayList<String>();
@@ -111,7 +110,7 @@ public class WHList {
         }
     }
 
-//    输出得到链表的长度
+//    4.输出得到链表的长度
     public int getListLength(){
         int length = 0;
         if (headNode == null){
@@ -127,4 +126,28 @@ public class WHList {
         }
     }
 
+//    5.判断链表中是否存在某一个节点的值
+    public boolean LocateNode(String InputNode){
+        ListNode pnode = headNode;
+        while (pnode.Next != null){
+            if (pnode.data.equals(InputNode)){
+                return true;
+            }else{
+                pnode = pnode.Next;
+            }
+        }
+        if (pnode.data.equals(InputNode)){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+//    6.返回节点的前驱值
+    public String PriorNode(String InputNode){
+        ListNode pnode = headNode;
+        while (pnode.Next != null){
+            if (pnode )
+        }
+    }
 }
