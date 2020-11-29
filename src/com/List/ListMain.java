@@ -9,6 +9,21 @@ public class ListMain {
         list.insertList("李黄");
         list.insertList("李逵");
         System.out.print(list.getListArray()+"\n");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //        System.out.print("list length ="+list.getListLength()+"\n");
 //        list.deleteListNode("赵云");
 //        list.deleteListNode("赵云");
@@ -17,7 +32,9 @@ public class ListMain {
 //        System.out.print("--222--list length ="+list.getListLength()+"\n");
 //        list.insertList("李黄");
 //        System.out.print(list.getListArray()+"333---\n");
-
-        System.out.print("是否存在节点值"+list.LocateNode("黄白"));
+//        System.out.print("是否存在节点值"+list.LocateNode("黄白"));
+//        System.out.print("前置节点是---"+list.PriorNode("李逵"));
     }
+
+
 }

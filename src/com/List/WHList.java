@@ -146,8 +146,24 @@ public class WHList {
 //    6.返回节点的前驱值
     public String PriorNode(String InputNode){
         ListNode pnode = headNode;
+        ListNode hnode = pnode;
         while (pnode.Next != null){
-            if (pnode )
+            if (pnode.data.equals(InputNode)){
+                if (pnode == headNode){
+                    return null;
+                }
+                else {
+                    return hnode.data;
+                }
+            }else {
+                    hnode = pnode;
+                    pnode = pnode.Next;
+                }
+            }
+        if (pnode.data.equals(InputNode)){
+            return hnode.data;
+        }else {
+            return null;
         }
     }
 }
