@@ -55,30 +55,37 @@ public class WHList {
         else {
             ListNode pnode = headNode;
             ListNode hnode = pnode;
+//            判断前面的节点以及两个以上的节点
             while (pnode.Next != null){
                 if (pnode.data.equals(InputNode)){
-                    if (pnode == headNode)
-                    {
+//                    当为头节点的时候，头节点直接后移
+                    if (pnode == headNode){
                         headNode = pnode.Next;
-                        pnode.Next = null;
                         return true;
-                    }else if (pnode.Next != null){
-                        pnode = pnode.Next;
-                        return true;
-                    }
-                    else {
-                        pnode.Next = null;
+                    }else {
+//                        如果不是头节点则讲pnode的后继节点的值赋值给前面的节点
+                        hnode.Next = pnode.Next;
                         return true;
                     }
                 }else {
+//                    节点后移
+                    hnode = pnode;
                     pnode = pnode.Next;
                 }
             }
+//            判断最后一个节点以及只有一个节点的时候
             if (pnode.data.equals(InputNode)){
-                pnode.Next = null;
-                return true;
+//                当只有一个节点进行删除的时候如果等于第一个节点的值则头节点直接删除
+                if (pnode == headNode){
+                    headNode = null;
+                    return true;
+                }else {
+//                    这里是判断最后一个节点的值了，直接讲hnode的后继置为空移除掉最后一个节点
+                    hnode.Next = null;
+                    return true;
+                }
             }else {
-                return false;
+               return false;
             }
         }
     }
